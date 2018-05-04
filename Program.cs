@@ -8,11 +8,11 @@ namespace Question_4
         public String LastName { get; set; }
         public Int16 YearOfBirth { get; set; }
 
-        public Person(string fn, string ln)
+        public Person(string firstName, string lastName)
         {
 
-            FirstName = fn;
-            LastName = ln;
+            FirstName = firstName;
+            LastName = lastName;
         }
         public int GetAge()
         {
@@ -28,12 +28,12 @@ namespace Question_4
     class Student : Person
     {
 
-        public int StudentId { get; set; }
+        public int StudentID { get; set; }
         public string Campus { get; set; }
-        public Student(string fn, string ln,string campus) : base(fn, ln)
+        public Student(string firstName, string lastName,string campus) : base(firstName, lastName)
         {
 
-            StudentId = EnrollStudent();
+            StudentID = EnrollStudent();
             Campus = campus;
 
         }
@@ -52,22 +52,24 @@ namespace Question_4
         {
             System.Console.WriteLine("Enter the details of student below");
             Console.WriteLine("********************************");
-            System.Console.WriteLine("Enter your first name?");
+            System.Console.Write("Enter first name: ");
             string firstname = Console.ReadLine();
-            Console.WriteLine("Firstname:" + firstname);
+            
             Console.WriteLine("");
-            System.Console.WriteLine("Enter your last name?");
+            System.Console.Write("Enter last name:");
             string lastname = Console.ReadLine();
-            Console.WriteLine("Lastname" + lastname);
             Console.WriteLine("");
-            System.Console.WriteLine("Enter your campus?");
+
+            System.Console.Write("Enter your campus:");
             string campus = Console.ReadLine();
-            Console.WriteLine("Campus:" + campus);
             Console.WriteLine("");
+            
             Console.WriteLine("Creating new person record...");
             Console.WriteLine("");
+            Console.WriteLine("Adding new student record to Mokoia campus...");
+            Console.WriteLine("");
             Student newStudent = new Student(firstname, lastname, campus);
-            System.Console.WriteLine(string.Format("{0} {1} of {2} campus has a student ID of {3}", newStudent.FirstName, newStudent.LastName, newStudent.Campus, newStudent.StudentId));
+            System.Console.WriteLine(string.Format("{0} {1} of {2} campus has a student ID of {3}.", newStudent.FirstName, newStudent.LastName, newStudent.Campus, newStudent.StudentID));
             Console.ReadLine();
         }
     }
