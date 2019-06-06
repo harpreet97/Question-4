@@ -4,7 +4,7 @@ namespace Question_4
 {
     class Person
     {
-        public string FirstName { get; set; }
+        public string FirstName { get; set
         public String LastName { get; set; }
         public Int16 YearOfBirth { get; set; }
 
